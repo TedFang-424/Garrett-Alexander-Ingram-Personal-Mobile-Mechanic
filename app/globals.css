@@ -114,8 +114,19 @@ textarea {
 
 .hero-grid {
   grid-template-columns: 1.1fr 0.9fr;
+  grid-template-areas:
+    "copy-top visual"
+    "copy-bottom visual";
   gap: 2rem;
-  align-items: center;
+  align-items: start;
+}
+
+.hero-copy-top {
+  grid-area: copy-top;
+}
+
+.hero-copy-bottom {
+  grid-area: copy-bottom;
 }
 
 .eyebrow {
@@ -256,10 +267,15 @@ textarea::placeholder {
   position: relative;
 }
 
+.hero-visual {
+  grid-area: visual;
+  align-self: center;
+}
+
 .hero-visual img {
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 4.6;
   object-fit: cover;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -642,6 +658,20 @@ textarea {
     margin-top: 1rem;
   }
 
+  .hero-grid {
+    grid-template-areas:
+      "copy-top"
+      "visual"
+      "copy-bottom";
+    gap: 1.25rem;
+  }
+
+  .hero-visual {
+    max-width: 520px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
   .gallery-card-tall,
   .gallery-card-wide {
     grid-column: auto;
@@ -729,6 +759,10 @@ textarea {
     font-size: clamp(1.9rem, 8vw, 2.5rem);
   }
 
+  .hero-copy-top .hero-text {
+    margin-bottom: 0;
+  }
+
   .hero-points,
   .hero-actions {
     display: grid;
@@ -743,6 +777,20 @@ textarea {
 
   .hero-quick-facts {
     grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    max-width: 280px;
+  }
+
+  .hero-visual img {
+    aspect-ratio: 4 / 4.2;
+    border-radius: 22px;
+  }
+
+  .hero-badge {
+    padding: 0.85rem 1rem;
+    border-radius: 18px;
   }
 
   .proof-strip,

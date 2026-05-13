@@ -75,7 +75,7 @@ export default function HomePage() {
       <main id="top">
         <section className="hero">
           <div className="container hero-grid">
-            <div className="hero-copy">
+            <div className="hero-copy hero-copy-top">
               <p className="eyebrow">Mobile mechanic serving the greater Nashville area</p>
               <h1>
                 Fast mobile auto repair and late-night roadside help when you need it most.
@@ -86,6 +86,21 @@ export default function HomePage() {
                 helps drivers across Nashville, Antioch, Murfreesboro, Franklin,
                 Brentwood, Smyrna, and La Vergne get back on the road.
               </p>
+            </div>
+            <div className="hero-visual">
+              <Image
+                src="/images/main-photo.png"
+                alt="Garrett Ingram, a mobile mechanic in Nashville, ready to help customers on-site."
+                width={860}
+                height={1080}
+                priority
+              />
+              <div className="hero-badge">
+                <strong>Honest pricing</strong>
+                <span>Roadside help at $3 per mile</span>
+              </div>
+            </div>
+            <div className="hero-copy hero-copy-bottom">
               <div className="hero-points" aria-label="Key service highlights">
                 <span>8 years of experience</span>
                 <span>Emergency roadside help available late night</span>
@@ -116,19 +131,6 @@ export default function HomePage() {
               <div className="contact-priority">
                 Best contact method: website message first, phone second, text only if
                 needed.
-              </div>
-            </div>
-            <div className="hero-visual">
-              <Image
-                src="/images/main-photo.png"
-                alt="Garrett Ingram, a mobile mechanic in Nashville, ready to help customers on-site."
-                width={860}
-                height={1080}
-                priority
-              />
-              <div className="hero-badge">
-                <strong>Honest pricing</strong>
-                <span>Roadside help at $3 per mile</span>
               </div>
             </div>
           </div>
