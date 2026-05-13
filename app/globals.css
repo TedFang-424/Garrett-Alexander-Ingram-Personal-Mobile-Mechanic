@@ -1,12 +1,15 @@
 :root {
-  --bg: #07111f;
-  --card: rgba(255, 255, 255, 0.08);
-  --line: rgba(255, 255, 255, 0.14);
-  --text: #eaf2ff;
-  --muted: #a9bdd8;
-  --blue: #0d5bd7;
-  --blue-bright: #3f8cff;
-  --gold: #ffc94a;
+  --bg: #1b1c1f;
+  --bg-soft: #232529;
+  --bg-elevated: #2a2d31;
+  --card: rgba(255, 255, 255, 0.05);
+  --line: rgba(255, 255, 255, 0.1);
+  --text: #f6f2eb;
+  --muted: #c1b8ac;
+  --accent: #f97316;
+  --accent-strong: #ff8c32;
+  --accent-deep: #d65f0d;
+  --gold: #ffb347;
   --shadow: 0 18px 45px rgba(3, 10, 21, 0.3);
   --radius: 24px;
   --content-width: 1180px;
@@ -24,9 +27,9 @@ body {
   margin: 0;
   font-family: "Trebuchet MS", "Segoe UI", sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(63, 140, 255, 0.18), transparent 30%),
-    radial-gradient(circle at top right, rgba(43, 182, 115, 0.12), transparent 24%),
-    linear-gradient(180deg, #07111f 0%, #0b1730 52%, #0a1525 100%);
+    radial-gradient(circle at top left, rgba(249, 115, 22, 0.16), transparent 26%),
+    radial-gradient(circle at top right, rgba(255, 163, 92, 0.09), transparent 22%),
+    linear-gradient(180deg, #191a1d 0%, #1f2024 52%, #17181b 100%);
   color: var(--text);
   line-height: 1.6;
 }
@@ -57,7 +60,7 @@ textarea {
   top: 0;
   z-index: 20;
   backdrop-filter: blur(16px);
-  background: rgba(7, 17, 31, 0.74);
+  background: rgba(24, 25, 28, 0.82);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -131,7 +134,7 @@ textarea {
 
 .eyebrow {
   margin: 0 0 0.75rem;
-  color: #7cd7ff;
+  color: #ffb27a;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   font-size: 0.78rem;
@@ -189,8 +192,8 @@ textarea::placeholder {
 .coverage-list span {
   padding: 0.65rem 0.9rem;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   font-size: 0.95rem;
 }
 
@@ -204,8 +207,8 @@ textarea::placeholder {
 .quick-fact {
   padding: 1rem;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.11);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .quick-fact strong {
@@ -239,24 +242,25 @@ textarea::placeholder {
 }
 
 .button-primary {
-  background: linear-gradient(135deg, var(--blue-bright), var(--blue));
-  color: #fff;
-  box-shadow: 0 12px 30px rgba(13, 91, 215, 0.35);
+  background: linear-gradient(135deg, var(--accent-strong), var(--accent));
+  color: #fffaf4;
+  box-shadow: 0 12px 30px rgba(249, 115, 22, 0.28);
 }
 
 .button-secondary {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .button-tertiary {
-  background: linear-gradient(135deg, rgba(43, 182, 115, 0.9), rgba(18, 99, 63, 0.95));
-  color: #fff;
+  background: linear-gradient(135deg, #3a3d42, #2a2d31);
+  color: #fffaf4;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .contact-priority {
   margin-top: 1rem;
-  color: #cfe5ff;
+  color: #f2cfb2;
   font-size: 0.98rem;
 }
 
@@ -288,8 +292,8 @@ textarea::placeholder {
   width: min(280px, 78%);
   padding: 1rem 1.1rem;
   border-radius: 20px;
-  background: rgba(6, 17, 34, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(28, 29, 32, 0.92);
+  border: 1px solid rgba(249, 115, 22, 0.24);
   box-shadow: var(--shadow);
 }
 
@@ -339,14 +343,14 @@ textarea::placeholder {
 
 .service-card-featured {
   background:
-    linear-gradient(135deg, rgba(13, 91, 215, 0.24), rgba(239, 68, 68, 0.16)),
+    linear-gradient(135deg, rgba(249, 115, 22, 0.18), rgba(255, 166, 82, 0.08)),
     var(--card);
 }
 
 .section-dark {
   background:
-    radial-gradient(circle at right center, rgba(43, 182, 115, 0.16), transparent 22%),
-    rgba(5, 13, 25, 0.66);
+    radial-gradient(circle at right center, rgba(249, 115, 22, 0.12), transparent 22%),
+    rgba(20, 21, 24, 0.72);
 }
 
 .split-grid {
@@ -419,7 +423,7 @@ textarea::placeholder {
 
 .reviewer {
   display: inline-block;
-  color: #c8dbf6;
+  color: #f0d2b6;
   font-size: 0.92rem;
 }
 
@@ -433,7 +437,7 @@ textarea::placeholder {
   margin-top: 1rem;
   border: 0;
   background: transparent;
-  color: #8fd2ff;
+  color: #ffb27a;
   font-weight: 700;
   padding: 0;
   cursor: pointer;
@@ -472,8 +476,8 @@ textarea::placeholder {
 
 .section-accent {
   background:
-    linear-gradient(180deg, rgba(13, 91, 215, 0.18), rgba(13, 91, 215, 0.05)),
-    rgba(5, 12, 23, 0.7);
+    linear-gradient(180deg, rgba(249, 115, 22, 0.12), rgba(249, 115, 22, 0.03)),
+    rgba(24, 25, 28, 0.78);
 }
 
 .contact-grid {
@@ -544,7 +548,7 @@ textarea {
   padding: 0;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 28px;
-  background: #0d1930;
+  background: #232529;
   color: var(--text);
 }
 
@@ -609,8 +613,8 @@ textarea {
 }
 
 .review-modal-thumbs button.is-active {
-  border-color: #8fd2ff;
-  box-shadow: 0 0 0 2px rgba(143, 210, 255, 0.18);
+  border-color: #ffb27a;
+  box-shadow: 0 0 0 2px rgba(255, 178, 122, 0.16);
 }
 
 .review-meta-modal {
@@ -720,7 +724,7 @@ textarea {
     grid-template-columns: 1fr 1fr;
     gap: 0.6rem;
     padding: 0.8rem 0.8rem calc(0.8rem + env(safe-area-inset-bottom));
-    background: rgba(5, 12, 23, 0.94);
+    background: rgba(24, 25, 28, 0.96);
     backdrop-filter: blur(16px);
     border-top: 1px solid rgba(255, 255, 255, 0.12);
   }
@@ -736,12 +740,12 @@ textarea {
   }
 
   .mobile-urgent-bar a:first-child {
-    background: linear-gradient(135deg, var(--blue-bright), var(--blue));
+    background: linear-gradient(135deg, #393c41, #2b2e32);
     color: #fff;
   }
 
   .mobile-urgent-bar a:last-child {
-    background: linear-gradient(135deg, rgba(239, 68, 68, 0.96), rgba(174, 28, 28, 0.96));
+    background: linear-gradient(135deg, var(--accent-strong), var(--accent));
     color: #fff;
   }
 
