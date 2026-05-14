@@ -1,15 +1,19 @@
 :root {
-  --bg: #1b1c1f;
-  --bg-soft: #232529;
-  --bg-elevated: #2a2d31;
-  --card: rgba(255, 255, 255, 0.05);
-  --line: rgba(255, 255, 255, 0.1);
-  --text: #f6f2eb;
-  --muted: #c1b8ac;
-  --accent: #f97316;
-  --accent-strong: #ff8c32;
-  --accent-deep: #d65f0d;
-  --gold: #ffb347;
+  --bg: #f7f7f5;
+  --bg-soft: #ffffff;
+  --bg-elevated: #f4f9f4;
+  --card: rgba(244, 249, 244, 0.96);
+  --line: rgba(26, 61, 43, 0.14);
+  --text: #173224;
+  --muted: #5a7a68;
+  --accent: #1a6bbf;
+  --accent-strong: #378add;
+  --accent-deep: #1557a0;
+  --gold: #2d5c3e;
+  --forest: #1a3d2b;
+  --forest-soft: #2d5c3e;
+  --forest-light: #c8e6c8;
+  --blue-soft: #e8f2fc;
   --shadow: 0 18px 45px rgba(3, 10, 21, 0.3);
   --radius: 24px;
   --content-width: 1180px;
@@ -27,9 +31,9 @@ body {
   margin: 0;
   font-family: "Trebuchet MS", "Segoe UI", sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(249, 115, 22, 0.16), transparent 26%),
-    radial-gradient(circle at top right, rgba(255, 163, 92, 0.09), transparent 22%),
-    linear-gradient(180deg, #191a1d 0%, #1f2024 52%, #17181b 100%);
+    radial-gradient(circle at top left, rgba(26, 107, 191, 0.08), transparent 26%),
+    radial-gradient(circle at top right, rgba(200, 230, 200, 0.16), transparent 22%),
+    linear-gradient(180deg, #f7f7f5 0%, #ffffff 44%, #f4f9f4 100%);
   color: var(--text);
   line-height: 1.6;
 }
@@ -70,8 +74,8 @@ textarea {
   top: 0;
   z-index: 20;
   backdrop-filter: blur(16px);
-  background: rgba(24, 25, 28, 0.82);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(45, 92, 62, 0.9);
+  border-bottom: 1px solid rgba(200, 230, 200, 0.2);
 }
 
 .mobile-urgent-bar {
@@ -91,6 +95,7 @@ textarea {
   font-weight: 800;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  color: #f4f9f4;
 }
 
 .site-nav {
@@ -100,7 +105,7 @@ textarea {
 }
 
 .site-nav a {
-  color: var(--muted);
+  color: rgba(244, 249, 244, 0.8);
   transition: color 0.2s ease;
 }
 
@@ -144,7 +149,7 @@ textarea {
 
 .eyebrow {
   margin: 0 0 0.75rem;
-  color: #ffb27a;
+  color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.14em;
   font-size: 0.78rem;
@@ -191,6 +196,12 @@ textarea::placeholder {
   color: var(--muted);
 }
 
+.hero,
+.section-dark,
+.site-footer {
+  color: #f4f9f4;
+}
+
 .hero-points {
   display: flex;
   flex-wrap: wrap;
@@ -202,8 +213,8 @@ textarea::placeholder {
 .coverage-list span {
   padding: 0.65rem 0.9rem;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(200, 230, 200, 0.18);
   font-size: 0.95rem;
 }
 
@@ -217,8 +228,8 @@ textarea::placeholder {
 .quick-fact {
   padding: 1rem;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(200, 230, 200, 0.18);
 }
 
 .quick-fact strong {
@@ -255,24 +266,25 @@ textarea::placeholder {
 
 .button-primary {
   background: linear-gradient(135deg, var(--accent-strong), var(--accent));
-  color: #fffaf4;
-  box-shadow: 0 12px 30px rgba(249, 115, 22, 0.28);
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(26, 107, 191, 0.24);
 }
 
 .button-secondary {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(200, 230, 200, 0.24);
+  color: #f4f9f4;
 }
 
 .button-tertiary {
-  background: linear-gradient(135deg, #3a3d42, #2a2d31);
-  color: #fffaf4;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+  color: #fff;
+  border: 1px solid rgba(181, 212, 244, 0.32);
 }
 
 .contact-priority {
   margin-top: 1rem;
-  color: #f2cfb2;
+  color: #c8e6c8;
   font-size: 0.98rem;
 }
 
@@ -304,8 +316,9 @@ textarea::placeholder {
   width: min(280px, 78%);
   padding: 1rem 1.1rem;
   border-radius: 20px;
-  background: rgba(28, 29, 32, 0.92);
-  border: 1px solid rgba(249, 115, 22, 0.24);
+  background: rgba(244, 249, 244, 0.96);
+  color: var(--forest);
+  border: 1px solid rgba(26, 107, 191, 0.18);
   box-shadow: var(--shadow);
 }
 
@@ -381,7 +394,7 @@ textarea::placeholder {
 .gallery-card:focus-within {
   transform: translateY(-7px);
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.28);
-  border-color: rgba(249, 115, 22, 0.28);
+  border-color: rgba(26, 107, 191, 0.28);
 }
 
 .proof-grid article::before,
@@ -394,7 +407,7 @@ textarea::placeholder {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.07), transparent 48%);
+  background: radial-gradient(circle at top, rgba(26, 107, 191, 0.08), transparent 52%);
   opacity: 0;
   transition: opacity 0.28s ease;
   pointer-events: none;
@@ -442,14 +455,14 @@ textarea::placeholder {
 
 .service-card-featured {
   background:
-    linear-gradient(135deg, rgba(249, 115, 22, 0.18), rgba(255, 166, 82, 0.08)),
+    linear-gradient(135deg, rgba(26, 61, 43, 0.12), rgba(26, 107, 191, 0.08)),
     var(--card);
 }
 
 .section-dark {
   background:
-    radial-gradient(circle at right center, rgba(249, 115, 22, 0.12), transparent 22%),
-    rgba(20, 21, 24, 0.72);
+    radial-gradient(circle at right center, rgba(26, 107, 191, 0.1), transparent 22%),
+    linear-gradient(180deg, #1f4331 0%, #1a3d2b 100%);
 }
 
 .split-grid {
@@ -522,7 +535,7 @@ textarea::placeholder {
 
 .reviewer {
   display: inline-block;
-  color: #f0d2b6;
+  color: var(--forest);
   font-size: 0.92rem;
 }
 
@@ -536,7 +549,7 @@ textarea::placeholder {
   margin-top: 1rem;
   border: 0;
   background: transparent;
-  color: #ffb27a;
+  color: var(--accent);
   font-weight: 700;
   padding: 0;
   cursor: pointer;
@@ -555,8 +568,8 @@ textarea::placeholder {
   height: 48px;
   border: 0;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  background: rgba(26, 61, 43, 0.12);
+  color: var(--forest);
   font-size: 1.25rem;
   cursor: pointer;
   transition:
@@ -567,7 +580,7 @@ textarea::placeholder {
 .review-control:hover,
 .review-control:focus-visible {
   transform: translateY(-2px) scale(1.03);
-  background: rgba(249, 115, 22, 0.18);
+  background: rgba(26, 107, 191, 0.16);
 }
 
 .gallery-grid {
@@ -592,8 +605,8 @@ textarea::placeholder {
 
 .section-accent {
   background:
-    linear-gradient(180deg, rgba(249, 115, 22, 0.12), rgba(249, 115, 22, 0.03)),
-    rgba(24, 25, 28, 0.78);
+    linear-gradient(180deg, rgba(232, 242, 252, 0.8), rgba(244, 249, 244, 0.96)),
+    #ffffff;
 }
 
 .contact-grid {
@@ -627,10 +640,10 @@ label {
 input,
 textarea {
   width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(26, 61, 43, 0.14);
   border-radius: 16px;
   padding: 0.9rem 1rem;
-  background: rgba(255, 255, 255, 0.06);
+  background: #ffffff;
   color: var(--text);
 }
 
@@ -645,6 +658,7 @@ textarea {
 
 .site-footer {
   padding: 1.5rem 0 2.5rem;
+  background: linear-gradient(180deg, #254b37 0%, #1a3d2b 100%);
 }
 
 .footer-grid {
@@ -656,15 +670,15 @@ textarea {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  color: var(--muted);
+  color: #c8e6c8;
 }
 
 .review-modal {
   width: min(960px, calc(100% - 1.5rem));
   padding: 0;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(26, 61, 43, 0.12);
   border-radius: 28px;
-  background: #232529;
+  background: #ffffff;
   color: var(--text);
 }
 
@@ -686,8 +700,8 @@ textarea {
   height: 42px;
   border: 0;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  background: rgba(26, 61, 43, 0.08);
+  color: var(--forest);
   cursor: pointer;
 }
 
@@ -715,7 +729,7 @@ textarea {
 
 .review-modal-thumbs button {
   padding: 0;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(26, 61, 43, 0.12);
   border-radius: 16px;
   background: transparent;
   overflow: hidden;
@@ -728,7 +742,7 @@ textarea {
 .review-modal-thumbs button:hover,
 .review-modal-thumbs button:focus-visible {
   transform: translateY(-2px);
-  border-color: rgba(249, 115, 22, 0.3);
+  border-color: rgba(26, 107, 191, 0.3);
 }
 
 .review-modal-thumbs img {
@@ -738,8 +752,8 @@ textarea {
 }
 
 .review-modal-thumbs button.is-active {
-  border-color: #ffb27a;
-  box-shadow: 0 0 0 2px rgba(255, 178, 122, 0.16);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(26, 107, 191, 0.14);
 }
 
 .review-meta-modal {
@@ -760,8 +774,8 @@ textarea {
 .thank-you-card {
   padding: 2rem;
   border-radius: 30px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #ffffff;
+  border: 1px solid rgba(26, 61, 43, 0.12);
   box-shadow: var(--shadow);
 }
 
@@ -879,9 +893,9 @@ textarea {
     grid-template-columns: 1fr 1fr;
     gap: 0.6rem;
     padding: 0.8rem 0.8rem calc(0.8rem + env(safe-area-inset-bottom));
-    background: rgba(24, 25, 28, 0.96);
+    background: rgba(45, 92, 62, 0.96);
     backdrop-filter: blur(16px);
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: 1px solid rgba(200, 230, 200, 0.24);
   }
 
   .mobile-urgent-bar a {
@@ -895,7 +909,7 @@ textarea {
   }
 
   .mobile-urgent-bar a:first-child {
-    background: linear-gradient(135deg, #393c41, #2b2e32);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.08));
     color: #fff;
   }
 
