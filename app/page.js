@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ContactForm from "../components/ContactForm";
+import RevealOnScroll from "../components/RevealOnScroll";
 import ReviewCarousel from "../components/ReviewCarousel";
 import { galleryImages, reviews } from "../data/reviews";
 
@@ -75,7 +76,7 @@ export default function HomePage() {
       <main id="top">
         <section className="hero">
           <div className="container hero-grid">
-            <div className="hero-copy hero-copy-top">
+            <RevealOnScroll className="hero-copy hero-copy-top" delay={0}>
               <p className="eyebrow">Mobile mechanic serving the greater Nashville area</p>
               <h1>
                 Fast mobile auto repair and late-night roadside help when you need it most.
@@ -86,8 +87,8 @@ export default function HomePage() {
                 helps drivers across Nashville, Antioch, Murfreesboro, Franklin,
                 Brentwood, Smyrna, and La Vergne get back on the road.
               </p>
-            </div>
-            <div className="hero-visual">
+            </RevealOnScroll>
+            <RevealOnScroll className="hero-visual" delay={90}>
               <Image
                 src="/images/main-photo.png"
                 alt="Garrett Ingram, a mobile mechanic in Nashville, ready to help customers on-site."
@@ -99,8 +100,8 @@ export default function HomePage() {
                 <strong>Honest pricing</strong>
                 <span>Roadside help at $3 per mile</span>
               </div>
-            </div>
-            <div className="hero-copy hero-copy-bottom">
+            </RevealOnScroll>
+            <RevealOnScroll className="hero-copy hero-copy-bottom" delay={160}>
               <div className="hero-points" aria-label="Key service highlights">
                 <span>8 years of experience</span>
                 <span>Emergency roadside help available late night</span>
@@ -132,48 +133,50 @@ export default function HomePage() {
                 Best contact method: website message first, phone second, text only if
                 needed.
               </div>
-            </div>
+            </RevealOnScroll>
           </div>
         </section>
 
         <section className="proof-strip">
           <div className="container proof-grid">
-            <article>
+            <RevealOnScroll as="article" delay={0}>
               <strong>Roadside assistance</strong>
               <p>Fast response for breakdowns, no-start issues, and urgent on-site help.</p>
-            </article>
-            <article>
+            </RevealOnScroll>
+            <RevealOnScroll as="article" delay={90}>
               <strong>Repairs and diagnostics</strong>
               <p>Mobile troubleshooting and repair work without making you tow the car first.</p>
-            </article>
-            <article>
+            </RevealOnScroll>
+            <RevealOnScroll as="article" delay={180}>
               <strong>Fair, flexible pricing</strong>
               <p>Clear communication, negotiable quotes, and help finding the best parts prices.</p>
-            </article>
+            </RevealOnScroll>
           </div>
         </section>
 
         <section className="section" id="services">
           <div className="container">
-            <div className="section-heading">
+            <RevealOnScroll className="section-heading">
               <p className="eyebrow">Services</p>
               <h2>Real help for real car problems, wherever your car is parked.</h2>
               <p>
                 Garrett handles urgent roadside situations and everyday repair work with
                 the same careful, hands-on approach.
               </p>
-            </div>
+            </RevealOnScroll>
             <div className="services-grid">
-              {services.map((service) => (
-                <article
+              {services.map((service, index) => (
+                <RevealOnScroll
+                  as="article"
                   className={`service-card${
                     service.featured ? " service-card-featured" : ""
                   }`}
                   key={service.title}
+                  delay={index * 70}
                 >
                   <h3>{service.title}</h3>
                   <p>{service.text}</p>
-                </article>
+                </RevealOnScroll>
               ))}
             </div>
           </div>
@@ -181,7 +184,7 @@ export default function HomePage() {
 
         <section className="section section-dark" id="why-garrett">
           <div className="container split-grid">
-            <div>
+            <RevealOnScroll delay={0}>
               <p className="eyebrow">Why drivers call Garrett</p>
               <h2>Built for stressful moments when you need someone reliable, not a guess.</h2>
               <ul className="check-list">
@@ -189,8 +192,8 @@ export default function HomePage() {
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-            </div>
-            <div className="coverage-card">
+            </RevealOnScroll>
+            <RevealOnScroll className="coverage-card" delay={120}>
               <p className="eyebrow">Service area</p>
               <h3>Serving the greater Nashville area</h3>
               <div className="coverage-list" aria-label="Cities served">
@@ -206,37 +209,39 @@ export default function HomePage() {
               >
                 Visit Facebook Page
               </a>
-            </div>
+            </RevealOnScroll>
           </div>
         </section>
 
         <section className="section" id="reviews">
           <div className="container">
-            <div className="section-heading">
+            <RevealOnScroll className="section-heading">
               <p className="eyebrow">Reviews</p>
               <h2>Customer feedback and real repair work.</h2>
               <p>
                 Each review can show multiple repair photos, service dates, and a fuller
                 story when someone opens the detail view.
               </p>
-            </div>
+            </RevealOnScroll>
             <ReviewCarousel reviews={reviews} />
           </div>
         </section>
 
         <section className="section" id="gallery">
           <div className="container">
-            <div className="section-heading">
+            <RevealOnScroll className="section-heading">
               <p className="eyebrow">Gallery</p>
               <h2>Real on-site work, real tools, real repairs.</h2>
-            </div>
+            </RevealOnScroll>
             <div className="gallery-grid">
               {galleryImages.map((image, index) => (
-                <figure
+                <RevealOnScroll
+                  as="figure"
                   className={`gallery-card${
                     index === 0 ? " gallery-card-tall" : ""
                   }${index === 3 ? " gallery-card-wide" : ""}`}
                   key={image.src}
+                  delay={index * 80}
                 >
                   <Image
                     src={image.src}
@@ -244,7 +249,7 @@ export default function HomePage() {
                     fill
                     sizes="(max-width: 960px) 100vw, 33vw"
                   />
-                </figure>
+                </RevealOnScroll>
               ))}
             </div>
           </div>
@@ -252,7 +257,7 @@ export default function HomePage() {
 
         <section className="section section-accent" id="contact">
           <div className="container contact-grid">
-            <div>
+            <RevealOnScroll delay={0}>
               <p className="eyebrow">Contact</p>
               <h2>Send a message first for the best response.</h2>
               <p className="contact-copy">
@@ -279,8 +284,10 @@ export default function HomePage() {
                   <span>Your Antioch Mechanic</span>
                 </a>
               </div>
-            </div>
-            <ContactForm />
+            </RevealOnScroll>
+            <RevealOnScroll delay={120}>
+              <ContactForm />
+            </RevealOnScroll>
           </div>
         </section>
       </main>

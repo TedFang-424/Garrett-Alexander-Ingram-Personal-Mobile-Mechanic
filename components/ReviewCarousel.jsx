@@ -82,8 +82,12 @@ export default function ReviewCarousel({ reviews }) {
           &#8592;
         </button>
         <div className="review-track" ref={trackRef}>
-          {reviews.map((review) => (
-            <article className="review-card" key={`${review.reviewer}-${review.date}`}>
+          {reviews.map((review, index) => (
+            <article
+              className="review-card reveal is-visible"
+              style={{ "--reveal-delay": `${index * 70}ms` }}
+              key={`${review.reviewer}-${review.date}`}
+            >
               <div className="review-card-image">
                 <Image
                   src={review.previewImage}

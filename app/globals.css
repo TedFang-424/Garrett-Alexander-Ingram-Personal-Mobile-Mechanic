@@ -50,6 +50,16 @@ textarea {
   font: inherit;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 .container {
   width: min(calc(100% - 2rem), var(--content-width));
   margin: 0 auto;
@@ -233,12 +243,14 @@ textarea::placeholder {
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease,
-    background 0.2s ease;
+    background 0.2s ease,
+    filter 0.2s ease;
 }
 
 .button:hover,
 .button:focus-visible {
   transform: translateY(-2px);
+  filter: brightness(1.03);
 }
 
 .button-primary {
@@ -303,6 +315,28 @@ textarea::placeholder {
   margin-bottom: 0.25rem;
 }
 
+.hero-copy-top .eyebrow,
+.hero-copy-top h1,
+.hero-copy-top .hero-text {
+  animation: heroSlideUp 0.8s ease both;
+}
+
+.hero-copy-top h1 {
+  animation-delay: 80ms;
+}
+
+.hero-copy-top .hero-text {
+  animation-delay: 160ms;
+}
+
+.hero-visual {
+  animation: heroFloatIn 0.85s ease 140ms both;
+}
+
+.hero-copy-bottom {
+  animation: heroSlideUp 0.8s ease 220ms both;
+}
+
 .proof-strip,
 .section {
   padding: 3rem 0;
@@ -323,6 +357,71 @@ textarea::placeholder {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  position: relative;
+  isolation: isolate;
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease,
+    background-color 0.28s ease;
+  will-change: transform;
+}
+
+.proof-grid article:hover,
+.proof-grid article:focus-within,
+.service-card:hover,
+.service-card:focus-within,
+.coverage-card:hover,
+.coverage-card:focus-within,
+.review-card:hover,
+.review-card:focus-within,
+.contact-form:hover,
+.contact-form:focus-within,
+.gallery-card:hover,
+.gallery-card:focus-within {
+  transform: translateY(-7px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.28);
+  border-color: rgba(249, 115, 22, 0.28);
+}
+
+.proof-grid article::before,
+.service-card::before,
+.coverage-card::before,
+.review-card::before,
+.contact-form::before,
+.gallery-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.07), transparent 48%);
+  opacity: 0;
+  transition: opacity 0.28s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.proof-grid article:hover::before,
+.service-card:hover::before,
+.coverage-card:hover::before,
+.review-card:hover::before,
+.contact-form:hover::before,
+.gallery-card:hover::before {
+  opacity: 1;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .proof-grid article,
@@ -441,6 +540,14 @@ textarea::placeholder {
   font-weight: 700;
   padding: 0;
   cursor: pointer;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.review-link:hover,
+.review-link:focus-visible {
+  transform: translateX(3px);
 }
 
 .review-control {
@@ -452,6 +559,15 @@ textarea::placeholder {
   color: #fff;
   font-size: 1.25rem;
   cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.review-control:hover,
+.review-control:focus-visible {
+  transform: translateY(-2px) scale(1.03);
+  background: rgba(249, 115, 22, 0.18);
 }
 
 .gallery-grid {
@@ -604,6 +720,15 @@ textarea {
   background: transparent;
   overflow: hidden;
   cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.review-modal-thumbs button:hover,
+.review-modal-thumbs button:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(249, 115, 22, 0.3);
 }
 
 .review-modal-thumbs img {
@@ -642,6 +767,30 @@ textarea {
 
 .thank-you-card h1 {
   max-width: none;
+}
+
+@keyframes heroSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFloatIn {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 @media (max-width: 960px) {
@@ -695,6 +844,12 @@ textarea {
 @media (max-width: 640px) {
   body {
     padding-bottom: 5rem;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0ms;
   }
 
   .hero {
