@@ -196,7 +196,6 @@ textarea::placeholder {
   color: var(--muted);
 }
 
-.hero,
 .section-dark,
 .site-footer {
   color: #f4f9f4;
@@ -213,8 +212,9 @@ textarea::placeholder {
 .coverage-list span {
   padding: 0.65rem 0.9rem;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(200, 230, 200, 0.18);
+  background: rgba(232, 242, 252, 0.92);
+  border: 1px solid rgba(26, 107, 191, 0.16);
+  color: var(--forest);
   font-size: 0.95rem;
 }
 
@@ -228,8 +228,9 @@ textarea::placeholder {
 .quick-fact {
   padding: 1rem;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(200, 230, 200, 0.18);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(26, 61, 43, 0.12);
+  color: var(--forest);
 }
 
 .quick-fact strong {
@@ -271,9 +272,9 @@ textarea::placeholder {
 }
 
 .button-secondary {
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(200, 230, 200, 0.24);
-  color: #f4f9f4;
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(26, 61, 43, 0.14);
+  color: var(--forest);
 }
 
 .button-tertiary {
@@ -284,7 +285,7 @@ textarea::placeholder {
 
 .contact-priority {
   margin-top: 1rem;
-  color: #c8e6c8;
+  color: #6f9b82;
   font-size: 0.98rem;
 }
 
@@ -326,6 +327,22 @@ textarea::placeholder {
 .contact-card strong {
   display: block;
   margin-bottom: 0.25rem;
+}
+
+.hero-copy-top h1 {
+  color: var(--forest);
+}
+
+.hero-copy-top .hero-text {
+  color: #547765;
+}
+
+.hero-copy-bottom .hero-points,
+.hero-copy-bottom .hero-quick-facts,
+.hero-copy-bottom .hero-actions,
+.hero-copy-bottom .contact-priority {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-copy-top .eyebrow,
@@ -484,6 +501,12 @@ textarea::placeholder {
   flex-wrap: wrap;
   gap: 0.7rem;
   margin: 1.3rem 0 1.4rem;
+}
+
+.section-dark .coverage-list span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(200, 230, 200, 0.2);
+  color: #f4f9f4;
 }
 
 .review-shell {
