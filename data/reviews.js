@@ -60,19 +60,63 @@ export const reviews = [
 
 export const galleryImages = [
   {
-    src: "/images/img-2484.jpg",
-    alt: "Garrett working under the hood of a Chrysler 200 during a mobile repair."
+    src: "/images/gallery/img-1841.jpg",
+    alt: "Garrett Ingram portrait photo.",
+    title: "Portrait"
   },
   {
-    src: "/images/img-2485.jpg",
-    alt: "Undercar repair work being performed by Garrett on-site."
+    src: "/images/gallery/img-0452.jpg",
+    alt: "Garrett Ingram inside a vehicle.",
+    title: "On the road"
   },
   {
-    src: "/images/img-2486.jpg",
-    alt: "A Chrysler 200 set up for mobile mechanic work with tools organized nearby."
+    src: "/images/gallery/img-0467.jpg",
+    alt: "Garrett Ingram in the driver seat.",
+    title: "Ready to roll"
   },
   {
-    src: "/images/img-2487.jpg",
-    alt: "Garrett pouring coolant during a cooling system repair and flush."
+    src: "/images/gallery/img-0474.jpg",
+    alt: "Garrett Ingram photo.",
+    title: "Personal shot"
+  },
+  {
+    src: "/images/gallery/img-0476.jpg",
+    alt: "Garrett Ingram photo.",
+    title: "Personal shot"
+  },
+  {
+    src: "/images/gallery/img-0584.jpg",
+    alt: "Garrett Ingram photo.",
+    title: "Personal shot"
+  },
+  {
+    src: "/images/gallery/img-0583.jpg",
+    alt: "Garrett Ingram photo.",
+    title: "Personal shot"
+  },
+  {
+    src: "/images/gallery/img-0576.jpg",
+    alt: "Garrett Ingram photo.",
+    title: "Personal shot"
+  },
+  {
+    src: "/images/gallery/img-0577.jpg",
+    alt: "Garrett Ingram photo.",
+    title: "Personal shot"
+  },
+  {
+    src: "/images/gallery/img-0103.jpg",
+    alt: "Garrett Ingram photo.",
+    title: "Personal shot"
+  },
+  {
+    src: "/images/gallery/img-0121.jpeg",
+    alt: "Garrett Ingram photo.",
+    title: "Personal shot"
+  },
+  {
+    src: "/images/gallery/img-0106.jpg",
+    alt: "Garrett Ingram photo.",
+    title: "Personal shot"
   }
 ];

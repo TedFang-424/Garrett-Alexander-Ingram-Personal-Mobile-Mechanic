@@ -621,24 +621,81 @@ textarea::placeholder {
   background: rgba(26, 107, 191, 0.16);
 }
 
-.gallery-grid {
+.gallery-shell {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr 0.85fr;
+  grid-template-columns: auto 1fr auto;
   gap: 1rem;
+  align-items: center;
+}
+
+.gallery-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(280px, 320px);
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-bottom: 0.5rem;
+}
+
+.gallery-track::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-slide {
+  padding: 0;
+  text-align: left;
+  background: var(--card);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  scroll-snap-align: start;
 }
 
 .gallery-card {
   overflow: hidden;
-  min-height: 260px;
+  min-height: auto;
 }
 
-.gallery-card-tall {
-  grid-row: span 2;
-  min-height: 540px;
+.gallery-card-media {
+  position: relative;
+  aspect-ratio: 4 / 5;
 }
 
-.gallery-card-wide {
-  grid-column: span 2;
+.gallery-card-media img {
+  object-fit: cover;
+}
+
+.gallery-card-caption {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.95rem 1rem 1rem;
+  color: var(--forest);
+}
+
+.gallery-card-caption span {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.gallery-control {
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(26, 61, 43, 0.12);
+  color: var(--forest);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.gallery-control:hover,
+.gallery-control:focus-visible {
+  transform: translateY(-2px) scale(1.03);
+  background: rgba(26, 107, 191, 0.16);
 }
 
 .section-accent {
@@ -798,6 +855,77 @@ textarea {
   margin-bottom: 1rem;
 }
 
+.gallery-modal {
+  width: min(1100px, calc(100% - 1.5rem));
+  padding: 0;
+  border: 1px solid rgba(26, 61, 43, 0.12);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.98);
+  color: var(--text);
+}
+
+.gallery-modal::backdrop {
+  background: rgba(7, 16, 12, 0.76);
+  backdrop-filter: blur(5px);
+}
+
+.gallery-modal-shell {
+  position: relative;
+  padding: 1.2rem;
+}
+
+.gallery-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(26, 61, 43, 0.08);
+  color: var(--forest);
+  cursor: pointer;
+}
+
+.gallery-modal-stage {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.gallery-modal-image {
+  position: relative;
+  min-height: 70vh;
+}
+
+.gallery-modal-image img {
+  object-fit: contain;
+}
+
+.gallery-modal-arrow {
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(26, 61, 43, 0.12);
+  color: var(--forest);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.gallery-modal-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+  color: var(--forest);
+}
+
+.gallery-modal-caption span {
+  color: var(--muted);
+}
+
 .thank-you-page {
   min-height: 100vh;
   display: grid;
@@ -851,7 +979,6 @@ textarea {
   .contact-grid,
   .services-grid,
   .proof-grid,
-  .gallery-grid,
   .footer-grid,
   .review-modal-grid {
     grid-template-columns: 1fr;
@@ -877,18 +1004,12 @@ textarea {
     margin: 0 auto;
   }
 
-  .gallery-card-tall,
-  .gallery-card-wide {
-    grid-column: auto;
-    grid-row: auto;
-    min-height: 260px;
-  }
-
   .review-shell {
     grid-template-columns: 1fr;
   }
 
-  .review-control {
+  .review-control,
+  .gallery-control {
     display: none;
   }
 }
@@ -1031,14 +1152,13 @@ textarea {
     padding: 1.1rem;
   }
 
-  .gallery-grid {
+  .gallery-track {
+    grid-auto-columns: 78%;
     gap: 0.85rem;
   }
 
-  .gallery-card,
-  .gallery-card-tall,
-  .gallery-card-wide {
-    min-height: 220px;
+  .gallery-card-media {
+    aspect-ratio: 4 / 4.6;
   }
 
   .field-row {
@@ -1051,5 +1171,17 @@ textarea {
 
   .review-modal-main {
     min-height: 260px;
+  }
+
+  .gallery-modal-stage {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-modal-image {
+    min-height: 52vh;
+  }
+
+  .gallery-modal-caption {
+    flex-direction: column;
   }
 }

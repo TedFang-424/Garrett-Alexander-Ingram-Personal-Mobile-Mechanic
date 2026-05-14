@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ContactForm from "../components/ContactForm";
+import GalleryCarousel from "../components/GalleryCarousel";
 import RevealOnScroll from "../components/RevealOnScroll";
 import ReviewCarousel from "../components/ReviewCarousel";
 import { galleryImages, reviews } from "../data/reviews";
@@ -231,27 +232,9 @@ export default function HomePage() {
           <div className="container">
             <RevealOnScroll className="section-heading">
               <p className="eyebrow">Gallery</p>
-              <h2>Real on-site work, real tools, real repairs.</h2>
+              <h2>Scroll through the gallery and open any photo full size.</h2>
             </RevealOnScroll>
-            <div className="gallery-grid">
-              {galleryImages.map((image, index) => (
-                <RevealOnScroll
-                  as="figure"
-                  className={`gallery-card${
-                    index === 0 ? " gallery-card-tall" : ""
-                  }${index === 3 ? " gallery-card-wide" : ""}`}
-                  key={image.src}
-                  delay={index * 80}
-                >
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    sizes="(max-width: 960px) 100vw, 33vw"
-                  />
-                </RevealOnScroll>
-              ))}
-            </div>
+            <GalleryCarousel images={galleryImages} />
           </div>
         </section>
 
