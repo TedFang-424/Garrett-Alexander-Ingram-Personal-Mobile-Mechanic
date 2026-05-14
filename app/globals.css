@@ -266,9 +266,9 @@ textarea::placeholder {
 }
 
 .button-primary {
-  background: linear-gradient(135deg, var(--accent-strong), var(--accent));
+  background: linear-gradient(135deg, #2d5c3e, #1a3d2b);
   color: #fff;
-  box-shadow: 0 12px 30px rgba(26, 107, 191, 0.24);
+  box-shadow: 0 12px 30px rgba(26, 61, 43, 0.22);
 }
 
 .button-secondary {
@@ -278,9 +278,9 @@ textarea::placeholder {
 }
 
 .button-tertiary {
-  background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+  background: linear-gradient(135deg, #2d5c3e, #1a3d2b);
   color: #fff;
-  border: 1px solid rgba(181, 212, 244, 0.32);
+  border: 1px solid rgba(200, 230, 200, 0.26);
 }
 
 .contact-priority {
@@ -507,6 +507,21 @@ textarea::placeholder {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(200, 230, 200, 0.2);
   color: #f4f9f4;
+}
+
+.coverage-card {
+  color: var(--forest);
+}
+
+.coverage-card h3,
+.coverage-card .eyebrow {
+  color: var(--forest);
+}
+
+.coverage-card .coverage-list span {
+  background: rgba(232, 242, 252, 0.92);
+  border-color: rgba(26, 107, 191, 0.14);
+  color: var(--forest);
 }
 
 .review-shell {
