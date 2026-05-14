@@ -99,6 +99,7 @@ export default function GalleryCarousel({ images }) {
                   src={image.src}
                   alt={image.alt}
                   fill
+                  unoptimized
                   sizes="(max-width: 640px) 78vw, (max-width: 960px) 42vw, 300px"
                 />
               </div>
@@ -144,6 +145,7 @@ export default function GalleryCarousel({ images }) {
                   src={images[activeIndex].src}
                   alt={images[activeIndex].alt}
                   fill
+                  unoptimized
                   sizes="90vw"
                 />
               </div>
